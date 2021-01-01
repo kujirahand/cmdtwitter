@@ -5,6 +5,7 @@ import (
 	"flag"
 	"fmt"
 	"net/url"
+	"os"
 
 	"github.com/ChimeraCoder/anaconda"
 )
@@ -28,7 +29,7 @@ func main() {
 		fmt.Println("*cmdtwitter ver." + VERSION)
 		return
 	}
-	if len(flag.Args()) == 0 {
+	if len(os.Args) == 0 {
 		fmt.Println("*cmdtwitter ver." + VERSION)
 		flag.Usage()
 		return
