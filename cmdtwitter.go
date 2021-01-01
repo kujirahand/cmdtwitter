@@ -21,11 +21,11 @@ func main() {
 	flag.Parse()
 
 	// fmt.Println(flag.Args())
-	if key == nil || sec == nil {
+	if key == nil || sec == nil || *key == "" || *sec == "" {
 		fmt.Println("error: no key, sec parameters")
 		return
 	}
-	if accTok == nil || accSec == nil {
+	if accTok == nil || accSec == nil || *accTok == "" || *accSec == "" {
 		fmt.Println("error: no acc_tok, acc_sec parameters")
 		return
 	}
@@ -35,7 +35,7 @@ func main() {
 	// fmt.Printf("acc_tok=[%s]\nacc_sec=[%s]\n", *accTok, *accSec)
 
 	api := anaconda.NewTwitterApiWithCredentials(*accTok, *accSec, *key, *sec)
-	if *cmd == "tweet" && text == nil {
+	if *cmd == "tweet" && (*text == "" || text == nil) {
 		fmt.Println("error: no text parameter")
 		return
 	}
