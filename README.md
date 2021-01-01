@@ -17,6 +17,16 @@ go build
 ## How to use
 
 ```
+# [Tweet]
+cmdtwitter \
+    -key=(API Key) -sec=(API Secret) \
+    -acc_tok=(Access token) -acc_sec=(Access token secret) \
+    -cmd=tweet text=(Text)
+```
+
+When you make shell script:
+
+```
 #!/bin/sh
 
 key=xxx
