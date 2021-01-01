@@ -1,6 +1,6 @@
 # cmdtwitter
 
-command line twitter client for go
+command line twitter client for go for Titter API v1.1
 
 ## library install
 
