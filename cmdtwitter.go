@@ -9,6 +9,9 @@ import (
 	"github.com/ChimeraCoder/anaconda"
 )
 
+// VERSION returns app version
+var VERSION string = "1.0.0"
+
 func main() {
 	// get parameters
 	key := flag.String("key", "", "API Key")
@@ -18,7 +21,18 @@ func main() {
 	cmd := flag.String("cmd", "tweet", "Command, cmd=tweek,hometimeline")
 	text := flag.String("text", "", "Text")
 	cnt := flag.String("count", "10", "Count")
+	ver := flag.Bool("v", false, "Show Version")
 	flag.Parse()
+
+	if *ver {
+		fmt.Println("*cmdtwitter ver." + VERSION)
+		return
+	}
+	if len(flag.Args()) == 0 {
+		fmt.Println("*cmdtwitter ver." + VERSION)
+		flag.Usage()
+		return
+	}
 
 	// fmt.Println(flag.Args())
 	if key == nil || sec == nil || *key == "" || *sec == "" {
